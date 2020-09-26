@@ -1,0 +1,8 @@
+.header {
+  text-align: center;
+  margin: 0px auto;
+  pointer-events: none;
+}
+.longBox {
+  vertical-align: middle;
+}

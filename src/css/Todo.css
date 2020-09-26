@@ -1,0 +1,30 @@
+.undone {
+  width: 1000px;
+  height: 20px;
+  color: green;
+  margin: 10px auto;
+  padding: 0px;
+  text-align: center;
+}
+
+.noPointer {
+  pointer-events: none;
+  text-align: center;
+}
+
+.shortBox {
+  text-align: center;
+  vertical-align: middle;
+}
+
+.longBox {
+  vertical-align: middle;
+}
+
+.hidden {
+  display: none;
+}
+
+.blue {
+  background: blue;
+}

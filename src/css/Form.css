@@ -1,0 +1,24 @@
+input, button, select {
+  display: table-cell;
+  text-align: center;
+  vertical-align: middle;
+  height: 30px;
+  width: 163px;
+  z-index: 1;
+}
+input:focus {
+  outline:none;
+  outline-offset:0px;
+}
+.none {
+  display: none;
+}
+
+.shortBox {
+  width: 50px;
+}
+
+.form {
+  position: fixed;
+  left: 32px;
+}
