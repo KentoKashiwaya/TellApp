@@ -13,6 +13,11 @@ import {
   Legend,
   Area,
   Line,
+  RadarChart,
+  PolarGrid,
+  PolarAngleAxis,
+  PolarRadiusAxis,
+  Radar,
 } from "recharts";
 import "../css/Trend.css";
 
@@ -57,13 +62,13 @@ class IndustryChart extends Component {
     };
     const data = [
       {
-        name: "全体",
+        "name" : "全体",
         リスト数: this.props.charger.length,
         アポ取得数: this.props.appointmentLength,
         アポ取得率: this.props.appointmentRate,
       },
       {
-        name: "イベント",
+        "name": "イベント",
         リスト数: this.props.industry_A_Length,
         アポ取得数: industry_A_appointmentlength,
         アポ取得率: notationRate(
@@ -144,6 +149,7 @@ class IndustryChart extends Component {
         ),
       },
     ];
+    const data2 = data.filter(item => item.name !== "全体");
     return (
       <div>
         <ComposedChart width={730} height={250} data={data}>
@@ -156,6 +162,21 @@ class IndustryChart extends Component {
           <Bar dataKey="アポ取得数" barSize={20} fill="#ff4500" />
           <Line type="monotone" dataKey="アポ取得率" stroke="#33CC33" />
         </ComposedChart>
+
+        <RadarChart outerRadius={90} width={730} height={250} data={data2}>
+          <PolarGrid />
+          <PolarAngleAxis dataKey="name" />
+          <PolarRadiusAxis angle={30} domain={[0, "dataMax"]} />
+          <Radar
+            name="アポ取得数"
+            dataKey="アポ取得数"
+            stroke="#ff4500"
+            fill="#ff4500"
+            fillOpacity={0.6}
+          />
+          <Tooltip />
+          <Legend />
+        </RadarChart>
       </div>
     );
   }

@@ -178,51 +178,54 @@ class Trend extends Component {
       (this.state.sendMailLength / this.state.id.length) * 100;
     const ngRate = (this.state.ngLength / this.state.id.length) * 100;
     const connectionRate =
-      ((this.state.appointmentLength +
-        this.state.sendMailLength +
-        this.state.ngLength) /
-        this.state.id.length) *
-      100;
+      Math.floor(
+        ((this.state.appointmentLength +
+          this.state.sendMailLength +
+          this.state.ngLength) /
+          this.state.id.length) *
+          100 *
+          10
+      ) / 10;
     const industry_ALL_Length = [
       {
         name: "イベント",
         value: this.state.industry_A_Length,
-        fill: "#93FFAB"
+        fill: "#93FFAB",
       },
       {
         name: "飲食",
         value: this.state.industry_B_Length,
-        fill: "#86F9C5"
+        fill: "#86F9C5",
       },
       {
         name: "受付",
         value: this.state.industry_C_Length,
-        fill: "#E4FF8D"
+        fill: "#E4FF8D",
       },
       {
         name: "教育",
         value: this.state.industry_D_Length,
-        fill: "#8EF1FF"
+        fill: "#8EF1FF",
       },
       {
         name: "軽作業",
         value: this.state.industry_E_Length,
-        fill: "#8EB8FF"
+        fill: "#8EB8FF",
       },
       {
         name: "警備",
         value: this.state.industry_F_Length,
-        fill: "#C299FF"
+        fill: "#C299FF",
       },
       {
         name: "清掃",
         value: this.state.industry_G_Length,
-        fill: "#FF97C2"
+        fill: "#FF97C2",
       },
       {
         name: "ドライバー",
         value: this.state.industry_H_Length,
-        fill: "#FF9872"
+        fill: "#FF9872",
       },
     ];
     const notationRate = (rate) => {
@@ -232,23 +235,8 @@ class Trend extends Component {
       <div className="App Trend">
         <Aside />
         <div className="upper">
-          {/* <PieChart width={330} height={270} className="pie">
-            <Pie
-              data={industry_ALL_Length}
-              dataKey="value"
-              nameKey="name"
-              cx="50%"
-              cy="50%"
-              outerRadius={100}
-              fill="#003366"
-              label="true"
-              labelLine={false}
-            >
-              <LabelList dataKey="name" />
-            </Pie>
-            <Tooltip/>
-          </PieChart> */}
           <div className="IndustryChart box">
+            <div>アポ効率(業種別)</div>
             <IndustryChart
               appointmentRate={appointmentRate}
               all={this.state.all}
@@ -268,34 +256,44 @@ class Trend extends Component {
               industry_I_Length={this.state.industry_I_Length}
             />
           </div>
-          <FunnelChart width={400} height={250} className="FunnelChart box">
-            <Tooltip />
-            <Funnel dataKey="value" data={industry_ALL_Length} isAnimationActive>
-              <LabelList
-                position="inside"
-                fill="#000"
-                stroke="none"
-                dataKey="name"
-              />
-            </Funnel>
-          </FunnelChart>
+          <div className="right">
+            <div className="righttop FunnelChart box">
+              リスト数(業種別)
+              <FunnelChart width={400} height={250}>
+                <Tooltip />
+                <Funnel
+                  dataKey="value"
+                  data={industry_ALL_Length}
+                  isAnimationActive
+                >
+                  <LabelList
+                    position="inside"
+                    fill="#000"
+                    stroke="none"
+                    dataKey="name"
+                  />
+                </Funnel>
+              </FunnelChart>
+            </div>
+            <div className="rightmiddle">
+              <div className="box small small1">
+                アポ取得数(件)
+                <div className="bigText bigText1">
+                  {this.state.appointmentLength}
+                </div>
+              </div>
+              <div className="box small small2">
+                担当接続率(%)
+                <div className="bigText bigText2">{connectionRate}</div>
+              </div>
+            </div>
+          </div>
         </div>
         <div>【全体】</div>
         <div>アポ取得率{notationRate(appointmentRate)}%</div>
         <div>資料送付率{notationRate(sendMailRate)}%</div>
         <div>担当NG率{notationRate(ngRate)}%</div>
         <div>担当接続率{notationRate(connectionRate)}%</div>
-
-        <div>【業種】</div>
-        <div>イベントへの荷電数{this.state.industry_A_Length}件</div>
-        <div>飲食への荷電数{this.state.industry_B_Length}件</div>
-        <div>受付への荷電数{this.state.industry_C_Length}件</div>
-        <div>教育への荷電数{this.state.industry_D_Length}件</div>
-        <div>軽作業への荷電数{this.state.industry_E_Length}件</div>
-        <div>警備への荷電数{this.state.industry_F_Length}件</div>
-        <div>清掃への荷電数{this.state.industry_G_Length}件</div>
-        <div>ドライバーへの荷電数{this.state.industry_H_Length}件</div>
-        <div>販売への荷電数{this.state.industry_I_Length}件</div>
       </div>
     );
   }
