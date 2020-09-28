@@ -10,6 +10,8 @@ import {
   PieChart,
   Pie,
   LabelList,
+  FunnelChart,
+  Funnel,
 } from "recharts";
 import "../css/Trend.css";
 import Aside from "./Aside";
@@ -72,6 +74,7 @@ class Trend extends Component {
       const industryData = loadedData.industry;
       const statusData = loadedData.status;
 
+      //ロードした各項目が指定の状態・業種にマッチしているか判定
       const appointmentData = statusData === "アポ取得";
       const sendMailData = statusData === "資料送付";
       const ngData = statusData === "担当NG";
@@ -166,60 +169,9 @@ class Trend extends Component {
       industry_G_Length: industry_G_Length,
       industry_H_Length: industry_H_Length,
       industry_I_Length: industry_I_Length,
-
-      industry_A_AppointmentLength: industry_A_AppointmentLength,
     };
-
-    // const CheckAppointment = () => this.state.all.map((item) => {
-    //   if(item.industry === "イベント" && item.status === "アポ取得"){
-    //     industry_A_AppointmentLength++;
-    //   } else if(item.industry === "飲食" && item.status === "アポ取得"){
-    //     industry_B_AppointmentLength++;
-    //   } else if(item.industry === "受付" && item.status === "アポ取得"){
-    //     industry_C_AppointmentLength++;
-    //   } else if(item.industry === "教育" && item.status === "アポ取得"){
-    //     industry_D_AppointmentLength++;
-    //   } else if(item.industry === "軽作業" && item.status === "アポ取得"){
-    //     industry_E_AppointmentLength++;
-    //   } else if(item.industry === "警備" && item.status === "アポ取得"){
-    //     industry_F_AppointmentLength++;
-    //   } else if(item.industry === "清掃" && item.status === "アポ取得"){
-    //     industry_G_AppointmentLength++;
-    //   } else if(item.industry === "ドライバー" && item.status === "アポ取得"){
-    //     industry_H_AppointmentLength++;
-    //   } else if(item.industry === "販売" && item.status === "アポ取得"){
-    //     industry_I_AppointmentLength++;
-    //   }
-    // })
-    // CheckAppointment();
   }
   render() {
-    const CheckAppointment = () =>
-      this.state.all.map((item) => {
-        if (item.industry === "イベント" && item.status === "アポ取得") {
-          this.setState({
-            industry_A_AppointmentLength: this.state
-              .industry_A_AppointmentLength++,
-          });
-
-          // } else if(item.industry === "飲食" && item.status === "アポ取得"){
-          //   industry_B_AppointmentLength++;
-          // } else if(item.industry === "受付" && item.status === "アポ取得"){
-          //   industry_C_AppointmentLength++;
-          // } else if(item.industry === "教育" && item.status === "アポ取得"){
-          //   industry_D_AppointmentLength++;
-          // } else if(item.industry === "軽作業" && item.status === "アポ取得"){
-          //   industry_E_AppointmentLength++;
-          // } else if(item.industry === "警備" && item.status === "アポ取得"){
-          //   industry_F_AppointmentLength++;
-          // } else if(item.industry === "清掃" && item.status === "アポ取得"){
-          //   industry_G_AppointmentLength++;
-          // } else if(item.industry === "ドライバー" && item.status === "アポ取得"){
-          //   industry_H_AppointmentLength++;
-          // } else if(item.industry === "販売" && item.status === "アポ取得"){
-          //   industry_I_AppointmentLength++;
-        }
-      });
     const appointmentRate =
       (this.state.appointmentLength / this.state.id.length) * 100;
     const sendMailRate =
@@ -235,71 +187,104 @@ class Trend extends Component {
       {
         name: "イベント",
         value: this.state.industry_A_Length,
+        fill: "#93FFAB"
       },
       {
         name: "飲食",
         value: this.state.industry_B_Length,
+        fill: "#86F9C5"
       },
       {
         name: "受付",
         value: this.state.industry_C_Length,
+        fill: "#E4FF8D"
       },
       {
         name: "教育",
         value: this.state.industry_D_Length,
+        fill: "#8EF1FF"
       },
       {
         name: "軽作業",
         value: this.state.industry_E_Length,
+        fill: "#8EB8FF"
       },
       {
         name: "警備",
         value: this.state.industry_F_Length,
+        fill: "#C299FF"
       },
       {
         name: "清掃",
         value: this.state.industry_G_Length,
+        fill: "#FF97C2"
       },
       {
         name: "ドライバー",
         value: this.state.industry_H_Length,
-      },
-      {
-        name: "industry_I_Length",
-        value: this.state.industry_I_Length,
+        fill: "#FF9872"
       },
     ];
+    const notationRate = (rate) => {
+      return Math.floor(rate * 100) / 100;
+    };
     return (
-      <div className="App">
+      <div className="App Trend">
         <Aside />
-        <div className="IndustryChart">
-          <IndustryChart
-            appointmentRate={appointmentRate}
-            connectionRate={connectionRate}
-            all={this.state.all}
-            charger={this.state.charger}
-            industry={this.state.industry}
-            status={this.state.status}
-            appointmentData={this.appointmentData}
-            appointmentLength={this.state.appointmentLength}
-            industry_A_Length={this.state.industry_A_Length}
-            industry_B_Length={this.state.industry_B_Length}
-            industry_C_Length={this.state.industry_C_Length}
-            industry_D_Length={this.state.industry_D_Length}
-            industry_E_Length={this.state.industry_E_Length}
-            industry_F_Length={this.state.industry_F_Length}
-            industry_G_Length={this.state.industry_G_Length}
-            industry_H_Length={this.state.industry_H_Length}
-            industry_I_Length={this.state.industry_I_Length}
-            // industry_A_AppointmentLength={this.state.industry_A_AppointmentLength}
-            CheckAppointment={() => this.CheckAppointment}
-          />
+        <div className="upper">
+          {/* <PieChart width={330} height={270} className="pie">
+            <Pie
+              data={industry_ALL_Length}
+              dataKey="value"
+              nameKey="name"
+              cx="50%"
+              cy="50%"
+              outerRadius={100}
+              fill="#003366"
+              label="true"
+              labelLine={false}
+            >
+              <LabelList dataKey="name" />
+            </Pie>
+            <Tooltip/>
+          </PieChart> */}
+          <div className="IndustryChart box">
+            <IndustryChart
+              appointmentRate={appointmentRate}
+              all={this.state.all}
+              charger={this.state.charger}
+              industry={this.state.industry}
+              status={this.state.status}
+              appointmentData={this.appointmentData}
+              appointmentLength={this.state.appointmentLength}
+              industry_A_Length={this.state.industry_A_Length}
+              industry_B_Length={this.state.industry_B_Length}
+              industry_C_Length={this.state.industry_C_Length}
+              industry_D_Length={this.state.industry_D_Length}
+              industry_E_Length={this.state.industry_E_Length}
+              industry_F_Length={this.state.industry_F_Length}
+              industry_G_Length={this.state.industry_G_Length}
+              industry_H_Length={this.state.industry_H_Length}
+              industry_I_Length={this.state.industry_I_Length}
+            />
+          </div>
+          <FunnelChart width={400} height={250} className="FunnelChart box">
+            <Tooltip />
+            <Funnel dataKey="value" data={industry_ALL_Length} isAnimationActive>
+              <LabelList
+                position="inside"
+                fill="#000"
+                stroke="none"
+                dataKey="name"
+              />
+            </Funnel>
+          </FunnelChart>
         </div>
         <div>【全体】</div>
-        <div>アポ取得率{Math.floor(appointmentRate * 100) / 100}%</div>
-        <div>資料送付率{Math.floor(sendMailRate * 100) / 100}%</div>
-        <div>担当NG率{Math.floor(ngRate * 100) / 100}%</div>
-        <div>担当接続率{Math.floor(connectionRate * 100) / 100}%</div>
+        <div>アポ取得率{notationRate(appointmentRate)}%</div>
+        <div>資料送付率{notationRate(sendMailRate)}%</div>
+        <div>担当NG率{notationRate(ngRate)}%</div>
+        <div>担当接続率{notationRate(connectionRate)}%</div>
 
         <div>【業種】</div>
         <div>イベントへの荷電数{this.state.industry_A_Length}件</div>
@@ -311,51 +296,6 @@ class Trend extends Component {
         <div>清掃への荷電数{this.state.industry_G_Length}件</div>
         <div>ドライバーへの荷電数{this.state.industry_H_Length}件</div>
         <div>販売への荷電数{this.state.industry_I_Length}件</div>
-
-        <PieChart width={330} height={250}>
-          <Pie
-            data={industry_ALL_Length}
-            dataKey="value"
-            nameKey="name"
-            cx="50%"
-            cy="50%"
-            outerRadius={100}
-            fill="#8884d8"
-            label="true"
-            labelLine={false}
-          ></Pie>
-        </PieChart>
-
-        <ComposedChart //グラフ全体のサイズや位置、データを指定。場合によってmarginで上下左右の位置を指定する必要あり。
-          width={600} //グラフ全体の幅を指定
-          height={250} //グラフ全体の高さを指定
-          layout="vertical" //グラフのX軸とY軸を入れ替え
-          data={this.state.todos} //Array型のデータを指定
-          margin={{ top: 20, right: 60, bottom: 10, left: 250 }} //marginを指定
-        >
-          <XAxis //X軸に関する設定
-            type="number" //データタイプをnumberに変更。デフォルトではcategoryになっている
-            domain={[0, "dataMax"]} //軸の表示領域を指定
-            stroke="#fff"
-            unit="%"
-          />
-          <YAxis //Y軸に関する設定
-            type="category" //データタイプをcategoryに変更
-            dataKey="desc" //Array型のデータの、Y軸に表示したい値のキーを指定
-            stroke="#fff"
-          />
-          <Tooltip /> ////hoverさせた時に具体的な値を表示させるように指定
-          <CartesianGrid //グラフのグリッドを指定
-            stroke="#fff" //グリッド線の色を指定
-          />
-          <Bar
-            dataKey="rate"
-            barSize={20}
-            stroke="rgba(34, 80, 162, 0.2)"
-            fillOpacity={1}
-            fill="#005D4D"
-          />
-        </ComposedChart>
       </div>
     );
   }
