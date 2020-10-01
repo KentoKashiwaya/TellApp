@@ -5,7 +5,7 @@ import Aside from "./Aside";
 import "../css/App.css";
 
 class App extends Component {
-  constructor() {
+  constructor() { 
     super();
     const todos = [];
     for (let i = 1; i < localStorage.length + 1; i++) {

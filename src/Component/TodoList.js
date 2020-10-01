@@ -17,10 +17,10 @@ class TodoList extends Component {
       <ul>
         <div className="header">
           <textarea className="shortBox bgcBlue"></textarea>
-          <select className="shortBox headselect bgcBlue" name="newTitle">
+          <select className="shortBox headselect bgcBlue none" name="newTitle">
           <option value="作成者">作成者</option>
           </select>
-          <select className="shortBox headselect bgcBlue">
+          <select className="shortBox headselect bgcBlue hide">
             <option value="架電者">架電者</option>
           </select>
           <textarea className="shortBox bgcBlue">TEL日1</textarea>

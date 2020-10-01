@@ -47,14 +47,14 @@ class Todo extends Component {
           <textarea className="shortBox noPointer id" name="countTodo">
             {this.props.id}       
           </textarea>
-          <select className="shortBox" name="newTitle">
+          <select className="shortBox hide" name="newTitle">
             <option>{this.props.title}</option>
             <option value="田中">田中</option>
             <option value="髙橋">髙橋</option>
             <option value="及川">及川</option>
             <option value="桜井">桜井</option>
           </select>
-          <select className="shortBox choice" name="newCharger">
+          <select className="shortBox choice hide" name="newCharger">
             <option>{this.props.charger}</option>
             <option value="田中">田中</option>
             <option value="髙橋">髙橋</option>

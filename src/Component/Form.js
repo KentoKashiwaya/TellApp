@@ -7,7 +7,7 @@ class Form extends Component {
     return (
       <div className="form">
         <form onSubmit={this.props.handleSubmit}>
-          <select name="title">
+          <select className="hide" name="title">
             <option className="none" value="">
               作成者を選択
             </option>

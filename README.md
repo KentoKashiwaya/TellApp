@@ -1,3 +1,10 @@
+# TellApp
+電話営業のリストと荷電結果をダッシュボードで管理できるサービスです。
+
+# URL
+会員登録なしでそのまま使えます。
+
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts

@@ -19,6 +19,6 @@ input:focus {
 
 .form {
   position: fixed;
-  left: 32px;
-  margin-top: 10px;
+  left: 50px;
+  top: 1px;
 }
