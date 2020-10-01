@@ -6,12 +6,12 @@
 }
 
 .sideMenu {
-  position: fixed; 
-  left : -500px;
+  position: fixed;
+  left: -500px;
   height: 100%;
   width: 220px;
   transition: all 0.3s;
-  background-color: #b0c4de;
+  background-color: #ff9872;
   opacity: 90%;
   z-index: 100;
 }
@@ -32,9 +32,9 @@
   cursor: pointer;
 }
 
-input[type="checkbox"]{
+input[type="checkbox"] {
   position: fixed;
-  left: -500vw;  
+  left: -500vw;
 }
 
 input[type="checkbox"]:checked ~ .sideMenu {
