@@ -1,4 +1,4 @@
-nav {
+.leftNav {
   min-width: 20px;
   display: flex;
   user-select: none;
@@ -15,6 +15,7 @@ nav {
   opacity: 90%;
   z-index: 100;
 }
+
 .sideMenu > li {
   margin: 10px;
   opacity: 100%;
@@ -26,6 +27,7 @@ nav {
   top: 13px;
   z-index: 200;
 }
+
 .open:hover {
   cursor: pointer;
 }

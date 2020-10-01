@@ -6,7 +6,7 @@ import { Link } from "react-router-dom";
 class Aside extends Component {
   render() {
     return (
-        <nav>
+        <nav className="leftNav">
           <input id="menu" type="checkbox" />
           <label for="menu" className="open"><img src={Menu} width="20px" /></label>
           <label for="menu" className="back"></label>
