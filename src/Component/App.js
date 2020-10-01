@@ -67,14 +67,6 @@ class App extends Component {
     e.target.companyProfile.value = "";
   }
 
-  setTodoStatus(clickTodo) {
-    const todos = this.state.todos.slice();
-    const todo = todos[clickTodo.id - 1];
-    todo.done = !todo.done;
-    todos[clickTodo.id - 1] = todo;
-    this.setState({ todos });
-  }
-
   handleDelete() {
     if(window.confirm('全ての項目を削除します。よろしいですか？')){
       for (let i = 1; i < localStorage.length + 100; i++) {
@@ -126,7 +118,6 @@ class App extends Component {
         <div className="right">
           <TodoList
             todos={this.state.todos}
-            setTodoStatus={this.setTodoStatus.bind(this)}
             updateLocalStrage={this.updateLocalStrage.bind(this)}
           />
         </div>

@@ -34,8 +34,7 @@ class Todo extends Component {
       localStorage.setItem(this.props.id, stringData);
       console.log(JSONdata);
     };
-    const className = "undone";
-    // const link = this.props.done ? "元に戻す" : "完了!";
+    const className = "OneTodo";
     const firstDate = localStorage.getItem(this.props.id);
     const firstDate1 = JSON.parse(firstDate);
     const iniDate1 = firstDate1.date1;
