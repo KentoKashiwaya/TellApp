@@ -133,11 +133,9 @@ class Trend extends Component {
       charger: charger,
       industry: industry,
       status: status,
-
       appointmentLength: appointmentLength,
       sendMailLength: sendMailLength,
       ngLength: ngLength,
-
       industry_A_Length: industry_A_Length,
       industry_B_Length: industry_B_Length,
       industry_C_Length: industry_C_Length,
@@ -149,6 +147,7 @@ class Trend extends Component {
       industry_I_Length: industry_I_Length,
     };
   }
+  
   render() {
     const appointmentRate =
       (this.state.appointmentLength / this.state.id.length) * 100;

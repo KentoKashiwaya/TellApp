@@ -15,26 +15,25 @@ class Todo extends Component {
   }
 
   render() {
-    const handleChange = (date) => {
+
+    const handleChangeDate = (date) => {
       this.setState({ startDate: date });
       const data = localStorage.getItem(this.props.id);
       const JSONdata = JSON.parse(data);
       JSONdata.date1 = date;
       const stringData = JSON.stringify(JSONdata);
       localStorage.setItem(this.props.id, stringData);
-      console.log(JSONdata);
     };
 
-    const handleChange2 = (date) => {
+    const handleChangeDate2 = (date) => {
       this.setState({ startDate2: date });
       const data = localStorage.getItem(this.props.id);
       const JSONdata = JSON.parse(data);
       JSONdata.date2 = date;
       const stringData = JSON.stringify(JSONdata);
       localStorage.setItem(this.props.id, stringData);
-      console.log(JSONdata);
     };
-    const className = "OneTodo";
+
     const firstDate = localStorage.getItem(this.props.id);
     const firstDate1 = JSON.parse(firstDate);
     const iniDate1 = firstDate1.date1;
@@ -43,7 +42,7 @@ class Todo extends Component {
     const parsedDate2 = Date.parse(iniDate2);
 
     return (
-      <li className={className}>
+      <li className="OneTodo">
         <form onChange={this.props.update} autocomplete="off">
           <textarea className="shortBox noPointer id" name="countTodo">
             {this.props.id}       
@@ -67,7 +66,7 @@ class Todo extends Component {
             value={this.state.startDate}
             className="shortBox"
             selected={parsedDate1}
-            onChange={handleChange}
+            onChange={handleChangeDate}
             portalId={this.state.startDate}
           />
           <DatePicker
@@ -75,7 +74,7 @@ class Todo extends Component {
             value={this.state.startDate2}
             className="shortBox"
             selected={parsedDate2}
-            onChange={handleChange2}
+            onChange={handleChangeDate2}
             portalId={this.state.startDate2}
           />
           <textarea className="longBox" name="newDesc">

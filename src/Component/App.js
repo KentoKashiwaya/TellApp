@@ -8,7 +8,6 @@ class App extends Component {
   constructor() {
     super();
     const todos = [];
-    const countTodo = todos.length;
     for (let i = 1; i < localStorage.length + 1; i++) {
       let prevTodos = JSON.parse(localStorage.getItem(i));
       todos.push(prevTodos);
@@ -19,6 +18,7 @@ class App extends Component {
     };
   }
 
+  //新規リストの追加処理
   handleSubmit(e) {
     e.preventDefault();
     const title = e.target.title.value;
@@ -68,15 +68,16 @@ class App extends Component {
   }
 
   handleDelete() {
-    if(window.confirm('全ての項目を削除します。よろしいですか？')){
+    if (window.confirm("全ての項目を削除します。よろしいですか？")) {
       for (let i = 1; i < localStorage.length + 100; i++) {
         localStorage.removeItem(i);
       }
       window.location.reload();
-    } return;
+    }
+    return;
   }
 
-  //内容に変更が加った際に情報をlocalstorageに保存
+  //シートの内容に変更があった際に情報をlocalstorageに保存
   updateLocalStrage(e) {
     e.preventDefault();
     const newTitle = e.currentTarget.newTitle.value;
@@ -102,11 +103,14 @@ class App extends Component {
       date1: newDate1,
       date2: newDate2,
     };
+
     let newOpp = JSON.stringify(newObj);
     localStorage.setItem(countTodo, newOpp);
     console.log("updated from App.");
   }
+
   reload = () => window.location.reload();
+
   render() {
     return (
       <div className="app">
