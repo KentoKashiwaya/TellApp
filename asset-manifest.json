@@ -1,25 +1,25 @@
 {
   "files": {
-    "main.css": "/tellapp/static/css/main.8d0cdeec.chunk.css",
-    "main.js": "/tellapp/static/js/main.0b07b07e.chunk.js",
-    "main.js.map": "/tellapp/static/js/main.0b07b07e.chunk.js.map",
-    "runtime-main.js": "/tellapp/static/js/runtime-main.8328ecac.js",
-    "runtime-main.js.map": "/tellapp/static/js/runtime-main.8328ecac.js.map",
-    "static/css/2.25ff2e5b.chunk.css": "/tellapp/static/css/2.25ff2e5b.chunk.css",
-    "static/js/2.480d3e40.chunk.js": "/tellapp/static/js/2.480d3e40.chunk.js",
-    "static/js/2.480d3e40.chunk.js.map": "/tellapp/static/js/2.480d3e40.chunk.js.map",
-    "index.html": "/tellapp/index.html",
-    "precache-manifest.a7dee9e4e8f7025f37e41407e4840894.js": "/tellapp/precache-manifest.a7dee9e4e8f7025f37e41407e4840894.js",
-    "service-worker.js": "/tellapp/service-worker.js",
-    "static/css/2.25ff2e5b.chunk.css.map": "/tellapp/static/css/2.25ff2e5b.chunk.css.map",
-    "static/css/main.8d0cdeec.chunk.css.map": "/tellapp/static/css/main.8d0cdeec.chunk.css.map",
-    "static/js/2.480d3e40.chunk.js.LICENSE.txt": "/tellapp/static/js/2.480d3e40.chunk.js.LICENSE.txt"
+    "main.css": "/TellApp/static/css/main.8d0cdeec.chunk.css",
+    "main.js": "/TellApp/static/js/main.c3387aa3.chunk.js",
+    "main.js.map": "/TellApp/static/js/main.c3387aa3.chunk.js.map",
+    "runtime-main.js": "/TellApp/static/js/runtime-main.8d577786.js",
+    "runtime-main.js.map": "/TellApp/static/js/runtime-main.8d577786.js.map",
+    "static/css/2.25ff2e5b.chunk.css": "/TellApp/static/css/2.25ff2e5b.chunk.css",
+    "static/js/2.480d3e40.chunk.js": "/TellApp/static/js/2.480d3e40.chunk.js",
+    "static/js/2.480d3e40.chunk.js.map": "/TellApp/static/js/2.480d3e40.chunk.js.map",
+    "index.html": "/TellApp/index.html",
+    "precache-manifest.9fd534c3f12a3835bc51ff65edef4139.js": "/TellApp/precache-manifest.9fd534c3f12a3835bc51ff65edef4139.js",
+    "service-worker.js": "/TellApp/service-worker.js",
+    "static/css/2.25ff2e5b.chunk.css.map": "/TellApp/static/css/2.25ff2e5b.chunk.css.map",
+    "static/css/main.8d0cdeec.chunk.css.map": "/TellApp/static/css/main.8d0cdeec.chunk.css.map",
+    "static/js/2.480d3e40.chunk.js.LICENSE.txt": "/TellApp/static/js/2.480d3e40.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
-    "static/js/runtime-main.8328ecac.js",
+    "static/js/runtime-main.8d577786.js",
     "static/css/2.25ff2e5b.chunk.css",
     "static/js/2.480d3e40.chunk.js",
     "static/css/main.8d0cdeec.chunk.css",
-    "static/js/main.0b07b07e.chunk.js"
+    "static/js/main.c3387aa3.chunk.js"
   ]
 }
