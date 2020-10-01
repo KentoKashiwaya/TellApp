@@ -11,15 +11,11 @@ class Aside extends Component {
           <label for="menu" className="open"><img src={Menu} width="20px" /></label>
           <label for="menu" className="back"></label>
           <ul className="sideMenu">
-            <li><Link to="./TellApp">TELシート</Link></li>
-            <li><Link to="./Trend">TEL結果</Link></li>
-            <li>使用中トーク</li>
-            <li>ページ4</li>
-            <li>ページ5</li>
-            <li>ページ6</li>
+            <li><Link to="./TellApp">TellSeet</Link></li>
+            <li><Link to="./Trend">DashBoard</Link></li>
           </ul>
         </nav>
-    )
+    ) 
   }
 }
 export default Aside;

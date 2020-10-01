@@ -1,18 +1,5 @@
 import React, { Component } from "react";
-import {
-  ComposedChart,
-  XAxis,
-  YAxis,
-  Tooltip,
-  CartesianGrid,
-  Bar,
-  Label,
-  PieChart,
-  Pie,
-  LabelList,
-  FunnelChart,
-  Funnel,
-} from "recharts";
+import { Tooltip, LabelList, FunnelChart, Funnel } from "recharts";
 import "../css/Trend.css";
 import Aside from "./Aside";
 import IndustryChart from "./IndustryChart";
@@ -54,17 +41,7 @@ class Trend extends Component {
     let industry_H_Length = 0;
     let industry_I_Length = 0;
 
-    let industry_A_AppointmentLength = 0;
-    let industry_B_AppointmentLength = 0;
-    let industry_C_AppointmentLength = 0;
-    let industry_D_AppointmentLength = 0;
-    let industry_E_AppointmentLength = 0;
-    let industry_F_AppointmentLength = 0;
-    let industry_G_AppointmentLength = 0;
-    let industry_H_AppointmentLength = 0;
-    let industry_I_AppointmentLength = 0;
-
-    //localstrageからデータをローディング
+    //localstrageからデータを読み込み・項目ごとに定数に代入
     for (let i = 1; i < localStorage.length + 1; i++) {
       const prevTodos = localStorage.getItem(i);
       const loadedData = JSON.parse(prevTodos);
@@ -74,7 +51,7 @@ class Trend extends Component {
       const industryData = loadedData.industry;
       const statusData = loadedData.status;
 
-      //ロードした各項目が指定の状態・業種にマッチしているか判定
+      //読み込んだ各項目が右辺の状態・業種にマッチしているか判定
       const appointmentData = statusData === "アポ取得";
       const sendMailData = statusData === "資料送付";
       const ngData = statusData === "担当NG";
@@ -88,7 +65,7 @@ class Trend extends Component {
       const industry_H_Data = industryData === "ドライバー";
       const industry_I_Data = industryData === "販売";
 
-      //ロードしたデータを項目ごとに配列に追加
+      //読み込んだデータを項目ごとに配列に追加
       all.push(loadedData);
       id.push(idData);
       author.push(authorData);
@@ -148,6 +125,7 @@ class Trend extends Component {
         industry_I_Length++;
       }
     }
+
     this.state = {
       all: all,
       id: id,
@@ -174,9 +152,6 @@ class Trend extends Component {
   render() {
     const appointmentRate =
       (this.state.appointmentLength / this.state.id.length) * 100;
-    const sendMailRate =
-      (this.state.sendMailLength / this.state.id.length) * 100;
-    const ngRate = (this.state.ngLength / this.state.id.length) * 100;
     const connectionRate =
       Math.floor(
         ((this.state.appointmentLength +
@@ -186,6 +161,8 @@ class Trend extends Component {
           100 *
           10
       ) / 10;
+
+    //FunnelChart用のデータを配列で用意
     const industry_ALL_Length = [
       {
         name: "イベント",
@@ -228,11 +205,8 @@ class Trend extends Component {
         fill: "#FF9872",
       },
     ];
-    const notationRate = (rate) => {
-      return Math.floor(rate * 100) / 100;
-    };
     return (
-      <div className="App Trend">
+      <div className="Trend">
         <Aside />
         <div className="upper">
           <div className="IndustryChart box">
@@ -289,11 +263,6 @@ class Trend extends Component {
             </div>
           </div>
         </div>
-        <div>【全体】</div>
-        <div>アポ取得率{notationRate(appointmentRate)}%</div>
-        <div>資料送付率{notationRate(sendMailRate)}%</div>
-        <div>担当NG率{notationRate(ngRate)}%</div>
-        <div>担当接続率{notationRate(connectionRate)}%</div>
       </div>
     );
   }

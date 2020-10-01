@@ -1,12 +1,10 @@
 .app {
-  background-color: #c3cfa9;
-  width: 100%;
+  background-color: #fdf5e6;
   color: white;
-  padding: 10px;
   text-align: center;
   display: flex;
-  min-height: 100vh;
 }
+
 textarea {
   resize: none;
 }

@@ -46,8 +46,8 @@ class Todo extends Component {
     return (
       <li className={className}>
         <form onChange={this.props.update} autocomplete="off">
-          <textarea className="shortBox noPointer" name="countTodo">
-            {this.props.id}
+          <textarea className="shortBox noPointer id" name="countTodo">
+            {this.props.id}       
           </textarea>
           <select className="shortBox" name="newTitle">
             <option>{this.props.title}</option>
@@ -98,7 +98,7 @@ class Todo extends Component {
             {this.props.phone}
           </textarea>
           <textarea className="longBox" name="newCompanyProfile">
-            {this.props.companyProfile}
+              {this.props.companyProfile}
           </textarea>
           <select className="longBox choice" name="newStatus">
             <option>{this.props.status}</option>

@@ -3,13 +3,15 @@
   height: 20px;
   color: green;
   margin: 10px auto;
-  padding: 0px;
-  text-align: center;
+  text-align: center; 
+  top: 40px;
+  position: relative;
 }
 
 .noPointer {
   pointer-events: none;
   text-align: center;
+  color: #3f51b5;
 }
 
 .shortBox {
@@ -18,13 +20,10 @@
 }
 
 .longBox {
+  display: table-cell;
   vertical-align: middle;
 }
 
 .hidden {
   display: none;
-}
-
-.blue {
-  background: blue;
 }

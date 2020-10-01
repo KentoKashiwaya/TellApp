@@ -17,26 +17,28 @@ class TodoList extends Component {
     return (
       <ul>
         <div className="header">
-          <textarea className="shortBox"></textarea>
-          <textarea className="shortBox" name="newTitle">
-            作成者
-          </textarea>
-          <textarea className="shortBox">荷電者</textarea>
-          <textarea className="shortBox">TEL日1</textarea>
-          <textarea className="shortBox">TEL日2</textarea>
-          <textarea className="longBox header" name="newDesc">
+          <textarea className="shortBox gray"></textarea>
+          <select className="shortBox headselect gray" name="newTitle">
+          <option value="作成者">作成者</option>
+          </select>
+          <select className="shortBox headselect gray">
+            <option value="架電者">架電者</option>
+          </select>
+          <textarea className="shortBox gray">TEL日1</textarea>
+          <textarea className="shortBox gray">TEL日2</textarea>
+          <textarea className="longBox gray" name="newDesc">
             会社名
           </textarea>
-          <textarea className="shortBox" name="newIndustry">
+          <textarea className="shortBox gray" name="newIndustry">
             業種
           </textarea>
-          <textarea className="longBox header" name="newPhone">
+          <textarea className="longBox gray" name="newPhone">
             電話番号
           </textarea>
-          <textarea className="longBox header" name="newCompanyProfile">
+          <textarea className="longBox gray" name="newCompanyProfile">
             会社概要
           </textarea>
-          <textarea className="longBox header" name="">
+          <textarea className="longBox gray" name="">
             TEL結果
           </textarea>
         </div>

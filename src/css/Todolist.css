@@ -2,7 +2,20 @@
   text-align: center;
   margin: 0px auto;
   pointer-events: none;
+  position: fixed;
+  z-index: 100;
+  left:225px;
 }
+.headselect {
+  appearance: none;
+}
+
 .longBox {
   vertical-align: middle;
+  padding: 2px;
+}
+.gray {
+  text-align: center;
+  background-color: #3f51b5;
+  color: aliceblue;
 }

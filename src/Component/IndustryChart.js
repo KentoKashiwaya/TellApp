@@ -6,12 +6,7 @@ import {
   Tooltip,
   CartesianGrid,
   Bar,
-  Label,
-  PieChart,
-  Pie,
-  LabelList,
   Legend,
-  Area,
   Line,
   RadarChart,
   PolarGrid,
@@ -36,6 +31,7 @@ class IndustryChart extends Component {
     let industry_H_appointmentlength = 0;
     let industry_I_appointmentlength = 0;
 
+    //業種ごとに取得アポ数をカウント・それぞれ変数を加算
     this.props.all.map((item) => {
       if (item.industry === "イベント" && item.status === "アポ取得") {
         industry_A_appointmentlength++;
@@ -57,18 +53,25 @@ class IndustryChart extends Component {
         industry_I_appointmentlength++;
       }
     });
+
+    //アポ取得率を少数第一位までの表記に変換
     const notationRate = (aplength, total) => {
-      return Math.floor((aplength / total) * 100);
+      return Math.floor((aplength / total) * 100 * 10) / 10;
     };
+
+    //グラフ表示用の業種ごとデータ(リスト数・アポ取得数・アポ取得率)を配列で用意
     const data = [
       {
-        "name" : "全体",
+        name: "全体",
         リスト数: this.props.charger.length,
         アポ取得数: this.props.appointmentLength,
-        アポ取得率: this.props.appointmentRate,
+        アポ取得率: notationRate(
+          this.props.appointmentLength,
+          this.props.charger.length
+        ),
       },
       {
-        "name": "イベント",
+        name: "イベント",
         リスト数: this.props.industry_A_Length,
         アポ取得数: industry_A_appointmentlength,
         アポ取得率: notationRate(
@@ -149,7 +152,10 @@ class IndustryChart extends Component {
         ),
       },
     ];
-    const data2 = data.filter(item => item.name !== "全体");
+
+    //レーダーチャート用に全データ(配列)から「全体」を除外
+    const data2 = data.filter((item) => item.name !== "全体");
+
     return (
       <div>
         <ComposedChart width={730} height={250} data={data}>
