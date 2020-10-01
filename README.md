@@ -1,11 +1,27 @@
 # TellApp
-電話営業のリストと荷電結果をダッシュボードで管理できるサービスです。
+電話営業のリストと荷電結果をダッシュボードで管理できるサービスです。<br >
+業種ごとのアポ取得効率を確認でき、生産性の向上につながります。<br >
+ログイン不要ですぐにお使いいただけます。<br >
+<img width="1400" src="https://user-images.githubusercontent.com/54047850/94814118-e1055b80-0433-11eb-96e3-c48078cbc4d0.jpeg">
+<img width="1400" src="https://user-images.githubusercontent.com/54047850/94814642-93d5b980-0434-11eb-87a1-193c09c54692.jpeg">
 
 # URL
-会員登録なしでそのまま使えます。
+https://KentoKashiwaya.github.io/TellApp/
 
+# 使用技術
+- react: 16.13.1
+- react-datepicker: 3.1.3,
+- react-router: 5.2.0,
+- recharts: 1.8.5,
+- @material-ui/core: 4.11.0,
+- @material-ui/icons: 4.9.1,
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# 機能一覧
+- フォームより新規リストの追加
+- 直接入力データの自動保存(localstorage)
+- 入力済みデータをチャートへ即時反映
+
+<!-- This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
 
@@ -34,9 +50,9 @@ Your app is ready to be deployed!
 
 See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
 
-### `npm run eject`
+### `npm run eject` -->
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+<!-- **Note: this is a one-way operation. Once you `eject`, you can’t go back!**
 
 If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
 
@@ -72,4 +88,4 @@ This section has moved here: https://facebook.github.io/create-react-app/docs/de
 
 ### `npm run build` fails to minify
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify -->
