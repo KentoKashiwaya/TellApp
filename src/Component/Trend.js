@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { Tooltip, LabelList, FunnelChart, Funnel } from "recharts";
+import { Tooltip, Treemap } from "recharts";
 import "../css/Trend.css";
 import Aside from "./Aside";
 import IndustryChart from "./IndustryChart";
@@ -147,7 +147,7 @@ class Trend extends Component {
       industry_I_Length: industry_I_Length,
     };
   }
-  
+
   render() {
     const appointmentRate =
       (this.state.appointmentLength / this.state.id.length) * 100;
@@ -161,7 +161,7 @@ class Trend extends Component {
           10
       ) / 10;
 
-    //FunnelChart用のデータを配列で用意
+    //Treemap用のデータを配列で用意
     const industry_ALL_Length = [
       {
         name: "イベント",
@@ -204,6 +204,7 @@ class Trend extends Component {
         fill: "#FF9872",
       },
     ];
+
     return (
       <div className="Trend">
         <Aside />
@@ -230,23 +231,17 @@ class Trend extends Component {
             />
           </div>
           <div className="right">
-            <div className="righttop FunnelChart box">
+            <div className="righttop Treemap box">
               リスト数(業種別)
-              <FunnelChart width={400} height={250}>
+              <Treemap
+                width={400}
+                height={250}
+                data={industry_ALL_Length}
+                dataKey="value"
+                aspectRatio={6 / 1}
+              >
                 <Tooltip />
-                <Funnel
-                  dataKey="value"
-                  data={industry_ALL_Length}
-                  isAnimationActive
-                >
-                  <LabelList
-                    position="inside"
-                    fill="#000"
-                    stroke="none"
-                    dataKey="name"
-                  />
-                </Funnel>
-              </FunnelChart>
+              </Treemap>
             </div>
             <div className="rightmiddle">
               <div className="box small small1">

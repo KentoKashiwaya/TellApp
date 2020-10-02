@@ -161,12 +161,12 @@ class IndustryChart extends Component {
         <ComposedChart width={730} height={250} data={data}>
           <XAxis dataKey="name" />
           <YAxis />
-          <Tooltip />
+          <Tooltip /> 
           <Legend />
           <CartesianGrid stroke="#f5f5f5" />
           <Bar dataKey="リスト数" barSize={20} fill="#003366" />
           <Bar dataKey="アポ取得数" barSize={20} fill="#ff4500" />
-          <Line type="monotone" dataKey="アポ取得率" stroke="#33CC33" />
+          <Line type="monotone" dataKey="アポ取得率" stroke="#33CC33" unit="%" />
         </ComposedChart>
 
         <RadarChart outerRadius={90} width={730} height={250} data={data2}>
