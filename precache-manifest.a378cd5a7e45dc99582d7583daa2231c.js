@@ -1,6 +1,6 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "00f247562198340f3e9c023505a5d509",
+    "revision": "10b326ab265c520f3a5f33c0635d9138",
     "url": "/TellApp/index.html"
   },
   {
@@ -8,8 +8,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/TellApp/static/css/2.25ff2e5b.chunk.css"
   },
   {
-    "revision": "5b72c8b40403382244e0",
-    "url": "/TellApp/static/css/main.49f03dec.chunk.css"
+    "revision": "bb114070da95381e9007",
+    "url": "/TellApp/static/css/main.51442d67.chunk.css"
   },
   {
     "revision": "8f3ed654642661acbf41",
@@ -20,7 +20,7 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/TellApp/static/js/2.f92408c9.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "5b72c8b40403382244e0",
+    "revision": "bb114070da95381e9007",
     "url": "/TellApp/static/js/main.d2cd8d5c.chunk.js"
   },
   {

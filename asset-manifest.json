@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.css": "/TellApp/static/css/main.49f03dec.chunk.css",
+    "main.css": "/TellApp/static/css/main.51442d67.chunk.css",
     "main.js": "/TellApp/static/js/main.d2cd8d5c.chunk.js",
     "main.js.map": "/TellApp/static/js/main.d2cd8d5c.chunk.js.map",
     "runtime-main.js": "/TellApp/static/js/runtime-main.8d577786.js",
@@ -9,17 +9,17 @@
     "static/js/2.f92408c9.chunk.js": "/TellApp/static/js/2.f92408c9.chunk.js",
     "static/js/2.f92408c9.chunk.js.map": "/TellApp/static/js/2.f92408c9.chunk.js.map",
     "index.html": "/TellApp/index.html",
-    "precache-manifest.9cbf6c9b3317bcb67b0d0a9e0645ae55.js": "/TellApp/precache-manifest.9cbf6c9b3317bcb67b0d0a9e0645ae55.js",
+    "precache-manifest.a378cd5a7e45dc99582d7583daa2231c.js": "/TellApp/precache-manifest.a378cd5a7e45dc99582d7583daa2231c.js",
     "service-worker.js": "/TellApp/service-worker.js",
     "static/css/2.25ff2e5b.chunk.css.map": "/TellApp/static/css/2.25ff2e5b.chunk.css.map",
-    "static/css/main.49f03dec.chunk.css.map": "/TellApp/static/css/main.49f03dec.chunk.css.map",
+    "static/css/main.51442d67.chunk.css.map": "/TellApp/static/css/main.51442d67.chunk.css.map",
     "static/js/2.f92408c9.chunk.js.LICENSE.txt": "/TellApp/static/js/2.f92408c9.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
     "static/js/runtime-main.8d577786.js",
     "static/css/2.25ff2e5b.chunk.css",
     "static/js/2.f92408c9.chunk.js",
-    "static/css/main.49f03dec.chunk.css",
+    "static/css/main.51442d67.chunk.css",
     "static/js/main.d2cd8d5c.chunk.js"
   ]
 }
