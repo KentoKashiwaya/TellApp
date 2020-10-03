@@ -13,11 +13,11 @@ class Aside extends Component {
         </label>
         <label for="menu" className="back"></label>
         <ul className="sideMenu">
-          <li>
-            <Link to="./TellApp">TellSeet</Link>
+          <li className="tellsheet">
+            <Link to="/TellApp">TellSheet</Link>
           </li>
-          <li>
-            <Link to="./Trend">DashBoard</Link>
+          <li className="dashboard">
+            <Link to="/Trend">DashBoard</Link>
           </li>
         </ul>
       </nav>

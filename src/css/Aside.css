@@ -11,14 +11,12 @@
   height: 100%;
   width: 220px;
   transition: all 0.3s;
-  background-color: #ff9872;
-  opacity: 90%;
+  background-color: orange;
   z-index: 100;
 }
 
-.sideMenu > li {
+.tellsheet,.dashboard{
   margin: 10px;
-  opacity: 100%;
 }
 
 .open {
