@@ -1,6 +1,6 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "6eb9ae6fc625cca86e7a7007c6f41a33",
+    "revision": "00f247562198340f3e9c023505a5d509",
     "url": "/TellApp/index.html"
   },
   {
