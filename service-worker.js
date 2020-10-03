@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/4.3.1/workbox-sw.js");
 
 importScripts(
-  "/TellApp/precache-manifest.bded5b37699bb8afbbf09b1775c51c17.js"
+  "/TellApp/precache-manifest.b25debfc31df7190fe578b6785dc7029.js"
 );
 
 self.addEventListener('message', (event) => {
